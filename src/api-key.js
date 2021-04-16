@@ -1,3 +1,3 @@
 export default{
-apiKey: 'ef35e03f'
+key: 'ef35e03f'
 }

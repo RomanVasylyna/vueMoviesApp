@@ -14,9 +14,9 @@
 </div>
 </div>
 
-<form class="movie-form">
-<input type="text" placeholder="Type Movie Name">
-<input type="submit">
+<form class="movie-form" @submit.prevent="">
+<input type="text" placeholder="Type Movie Name" v-model="search">
+<input type="submit" value="Search">
 </form>
 
 
@@ -25,10 +25,30 @@
 </template>
 
 <script>
+import { ref } from "vue"; //Composition API (Vue 3)
+import apikey from "@/api-key.js";
 
 export default {
   name: 'Home',
+
+  setup() {
+  const search = ref(""); // input value
+  const movies = ref([]); // omdb api request results (movies)
+  const key = apikey.key;
+
+  const searchMovies = () => { // Main function
+  
+  }
+
+  return{
+  search,
+  movies,
+  searchMovies,
+  key
+  }
+  }
 }
+
 </script>
 
 <style>
@@ -63,6 +83,31 @@ outline: none;
 border-radius: 8px;
 width: 80%;
 margin-bottom: 5px;
+}
+
+[type="text"]{
+ background-color: rgb(83, 80, 97); 
+ font-size: 18px;
+ color: #fff;
+}
+
+[type="text"]::placeholder{
+color: #fff;  
+font-size: 18px;
+transition: 0.4;
+}
+
+[type="submit"]{
+padding: 14px 20px;
+width: 70%;
+border-radius: 8px;
+outline: none;
+border: none;
+background-color: rgb(16, 143, 84);
+font-size: 18px;
+text-transform: uppercase;
+color: #fff;
+margin-top: 10px;
 }
 
 

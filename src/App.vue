@@ -23,7 +23,7 @@ box-sizing: border-box;
 
 body{
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background-color: rgb(57, 55, 66);
+background-color: rgb(57, 48, 90); 
 color: #fff;
 }
 
